@@ -2,5 +2,5 @@
  
 List Pagination and Filtering
 
-Purpose of project is to list student info on multiple pages.
+Purpose of project is to display an array of student info across multiple pages.
 10 students will be listed per 1 page.
