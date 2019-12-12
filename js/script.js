@@ -17,8 +17,9 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-
-
+const studentList = document.querySelectorAll("li");
+const pageLimit = 10;
+//console.log(studentList)
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -35,8 +36,17 @@ FSJS project 2 - List Filter and Pagination
        "invoke" the function 
 ***/
 
+const showPage = (list, page) => {
+   const startIndex = (page * 10) - 10;
+   const endIndex = page * 10;
+   for (let i = 0; i <studentList.length; i++) {
+      if (i >= startIndex && i < endIndex) {
+         console.log(i);
+      }
+   }
+}
 
-
+showPage(studentList.length, 2);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
