@@ -30,16 +30,27 @@ showPage(studentList.length, 6);
 ***/
 
 const appendPageLinks = (list) => {
-   let div = document.createElement("div");
+   const divPage = document.querySelector(".page");
+   const div = document.createElement("div");
+   const ul = document.createElement("ul");
+   const maxPages = Math.ceil(list.length / pageLimit);
    div.className = "pagination";
-   console.log(div);
-   divPage = document.querySelector(".page");
-   console.log(divPage);
-   div = divPage.appendChild(div);
-   console.log(div);
-
+   divPage.appendChild(div);
+   div.appendChild(ul);
+   for (let i = 0; i < maxPages; i++) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = i + 1;
+      a.textContent = i + 1;
+      ul.appendChild(li);
+      li.appendChild(a);
+   }
+   console.log(maxPages);
+   console.log(ul);
 };
 
-appendPageLinks();
+
+
+appendPageLinks(studentList);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
